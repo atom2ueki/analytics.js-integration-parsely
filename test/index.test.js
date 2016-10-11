@@ -12,7 +12,9 @@ describe('Parsely', function() {
   var analytics;
   var parsely;
   var options = {
-    apiKey: 'example.com'
+    apiKey: 'example.com',
+    dynamicTracking: false,
+    trackEvents: false
   };
 
   beforeEach(function() {
@@ -37,7 +39,9 @@ describe('Parsely', function() {
     analytics.compare(Parsely, integration('Parsely')
       .global('parsely')
       .global('PARSELY')
-      .option('apiKey', ''));
+      .option('apiKey', '')
+      .option('dynamicTracking', false)
+      .option('trackEvents', false));
   });
 
   describe('before loading', function() {
